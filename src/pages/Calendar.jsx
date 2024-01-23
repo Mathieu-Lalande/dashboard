@@ -23,7 +23,7 @@ const Scheduler = () => {
 
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category="App" title="Calendar" />
+      <Header category="App" title="Calendrier" />
       <ScheduleComponent
         height="650px"
         ref={(schedule) => setScheduleObj(schedule)}
@@ -32,7 +32,7 @@ const Scheduler = () => {
         dragStart={onDragStart}
       >
         <ViewsDirective>
-          { ['Day', 'Week', 'WorkWeek', 'Month', 'Agenda'].map((item) => <ViewDirective key={item} option={item} />)}
+          { ['Jour', 'Week', 'WorkWeek', 'Month', 'Agenda'].map((item) => <ViewDirective key={item} option={item} />)}
         </ViewsDirective>
         <Inject services={[Day, Week, WorkWeek, Month, Agenda, Resize, DragAndDrop]} />
       </ScheduleComponent>
@@ -46,7 +46,7 @@ const Scheduler = () => {
                 <DatePickerComponent
                   value={new Date(2021, 0, 10)}
                   showClearButton={false}
-                  placeholder="Current Date"
+                  placeholder="Aujourd'hui"
                   floatLabelType="Always"
                   change={change}
                 />
